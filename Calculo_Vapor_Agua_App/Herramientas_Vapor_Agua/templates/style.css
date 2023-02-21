@@ -1,0 +1,44 @@
+body {
+    background-color: #F0F0F0;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    color: #191970;
+}
+
+table {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    background-color: white;
+}
+
+th {
+    background-color: #191970;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+td {
+    font-size: 1.2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.btn-primary {
+    background-color: #191970;
+    border-color: #191970;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.btn-primary:hover {
+    background-color: #4169E1;
+    border-color: #4169E1;
+}

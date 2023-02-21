@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Análisis de CSV</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid mx-auto" style="max-width: 800px;">
+        <h1 class="text-center">Análisis de CSV</h1>
+        <form method="post" enctype="multipart/form-data" class="my-4">
+            <div class="form-group">
+                <label for="csv_files">Selecciona uno o varios archivos CSV:</label>
+                <input type="file" id="csv_files" name="csv_files[]" class="form-control-file" multiple>
+            </div>
+            <button type="submit" class="btn btn-primary">Analizar CSV</button>
+        </form>
+    </div>
+</body>
+</html>

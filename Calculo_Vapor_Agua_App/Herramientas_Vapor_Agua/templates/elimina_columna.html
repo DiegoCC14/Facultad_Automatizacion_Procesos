@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analisis de archivos CSV</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid mx-auto" style="max-width: 800px;">
+        <h1 class="text-center">Analisis de archivos CSV</h1>
+        <form action="{% url 'analisis_modificasion_csv' %}" method="post" enctype="multipart/form-data" class="my-4">
+        	{% csrf_token %}
+            <div class="form-group">
+                <label for="archivos">Selecciona uno o varios archivos CSV:</label>
+                <input type="file" name="archivos" id="archivos" class="form-control-file" multiple>
+            </div>
+
+			<div>
+        		<label for="text_area_columnas_eliminar">Columnas a Eliminar:</label>
+        		<br>
+				<textarea id="text_area_columnas_eliminar" name="text_area_columnas_eliminar" rows="4" cols="40"></textarea>
+			</div>
+			<br>
+			<div>
+            	<button type="submit" class="btn btn-primary">Eliminar Columnas</button>
+			</div>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
