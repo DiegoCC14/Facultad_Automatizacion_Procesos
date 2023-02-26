@@ -59,6 +59,7 @@
         bottom: 0;
         width: 100%;
         height: 60px; /* Altura del footer */
+        text-align: center;
       }
 
     </style>
@@ -94,15 +95,15 @@
           <ul class="nav flex-column">
             
             <li class="nav-item">
-              <a class="nav-link text-white" href="#">Home</a>
+              <a class="nav-link text-white" href="{% url 'analisis_modificasion_csv' %}">Home</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link text-white" href="#">Modificacion CSV</a>
+              <a class="nav-link text-white" href="{% url 'analisis_modificasion_csv' %}">Modificacion CSV</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active text-white" href="#">Envio Correos</a>
+              <a class="nav-link active text-white" href="{% url 'envio_correos_masivos' %}">Envio Correos</a>
             </li>
 
           </ul>
