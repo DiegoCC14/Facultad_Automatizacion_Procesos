@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi página web</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      .bg-header {
+        background-color: #236b8e; /* Color similar al académico para el header */
+      }
+      .bg-sidebar {
+        background-color: #2c3e50; /* Color para el sidebar */
+      }
+      .bg-footer {
+        background-color: #236b8e; /* Color similar al académico para el footer */
+      }
+      .sidebar {
+        color: #fff; /* Color de texto para el sidebar */
+      }
+
+      .main {
+        background-color: #fff;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bg-header">
+      <nav class="navbar navbar-expand-lg navbar-light bg-header">
+        <a class="navbar-brand text-white" href="#">Mi página web</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="col-md-3 col-lg-2 sidebar bg-sidebar text-white">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active text-white" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Contactos</a>
+            </li>
+          </ul>
+        </div>
+
+        
+
+      </div>
+    </div>
+    
+
+    <footer class="bg-footer text-white">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <p>Copyright © 2023
+              <a href="#" class="text-white">Mi página web</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

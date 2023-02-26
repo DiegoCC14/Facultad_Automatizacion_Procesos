@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+{% extends 'header_body_footer.html' %}
+
 <head>
     <title>Analisis de archivos CSV</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -7,7 +7,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
-<body>
+
+{% block content %}
+
     <div class="container-fluid mx-auto" style="max-width: 800px;">
         <h1 class="text-center">Analisis de archivos CSV</h1>
         <form action="{% url 'analisis_modificasion_csv' %}" method="post" enctype="multipart/form-data" class="my-4">
@@ -30,6 +32,5 @@
         </form>
 
     </div>
-
-</body>
-</html>
+    
+{% endblock %}

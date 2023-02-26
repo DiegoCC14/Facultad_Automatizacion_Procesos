@@ -43,22 +43,5 @@ class Analisis_Modificasion_CSV( View ):
 		os.remove( f'{dir_folder_temp_csv}.zip' )
 		shutil.rmtree( dir_folder_temp_csv )
 		# --------------------------------------->>>>>>>>>
-
+		
 		return response
-		
-		'''
-		for filename, file in request.FILES["AACR2239.csv"]:
-			name = request.FILES[filename].name
-			print(f"File: {name}")
-		
-		form = UploadFileForm( request.POST , request.FILES )
-		if form.is_valid():
-			handle_uploaded_file( request.FILES['file'] )
-
-		
-		if request.POST.is_valid():
-			print( f"POST_VALIDO DJANGO 123123---->>>>" )
-			data = form.cleaned_data.get("form_field")
-			print( f"datos_obtenidos: {data}" )
-		'''
-		return render( request , 'elimina_columna.html' )

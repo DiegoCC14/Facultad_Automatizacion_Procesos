@@ -1,0 +1,45 @@
+{% extends 'header_body_footer.html' %}
+
+<head>
+  <meta charset="UTF-8">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+</head>
+
+
+{% block content %}
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h1 class="text-center mb-4">Enviar correo electronico</h1>
+        <form>
+          <div class="form-group">
+            <label for="receptor">Receptor:</label>
+            <input type="email" class="form-control" id="receptor" placeholder="Ingresa la direccion de correo electronico del receptor">
+          </div>
+          <div class="form-group">
+            <label for="asunto">Asunto:</label>
+            <input type="text" class="form-control" id="asunto" placeholder="Ingresa el asunto del correo electronico">
+          </div>
+          <div class="form-group">
+            <label for="cuerpo">Cuerpo:</label>
+            <textarea class="form-control" id="cuerpo" rows="5" placeholder="Ingresa el cuerpo del correo electronico"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="enviador">Enviador:</label>
+            <input type="email" class="form-control" id="enviador" placeholder="Ingresa tu direccion de correo electronico">
+          </div>
+          <div class="form-group">
+            <label for="password">Contrasenia:</label>
+            <input type="password" class="form-control" id="password" placeholder="Ingresa tu contrasena">
+          </div>
+          <button type="submit" class="btn btn-primary btn-block mt-4">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}

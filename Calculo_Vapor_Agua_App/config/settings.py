@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Herramientas_Vapor_Agua',
+    'Envio_Correo_Masivos',
 ]
 
 MIDDLEWARE = [
