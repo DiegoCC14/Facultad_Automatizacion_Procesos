@@ -1,0 +1,68 @@
+lA SEMANA 2239 tuvo problmeas con conexion al ftp de SIRGAS, para publicar los productos, por lo tanto se pretendio realizar 
+el ajuste del ZTD desde AjusteZTD_SIRGAS. Para esto hay dos opciones
+
+A) Si hubiese corrido el programa IWV_auto_semGPS_5  y si cuento con los OUTPUT de la semana  *.csv
+
+1)Para generar los archivos por dia, en el formato SINEX se corrió el ejecutable SINEX_ZTD,
+   previamente se configuró en data/SINEX_FILES en archivo "ztd_publicado", alli una vez que finaliza la generación de los SINEX 
+   se coloca el nombre de la semana,es decir que se ejecuta para la semana siguiente. 
+
+2) este ejecutable SINEX_ZTD, tiene un error, lee 5 columnas en donde la penúltima columna como ZTD (TROTOT) y 
+    la última como desvio estandar.
+   Para los archivos de salida que tengo, lo que corresponde es la antepenúltima como ZTD (TROTOT) y la penúltima como desvio estandar 
+
+3)   Por lo tanto hay que extraer de los *.csv que tienen 7 columnas (incluyendo la primera con fecha y hora) para reducirlos a 5 columnas 
+
+te copio el archivo (AGGO2186_completo.csv) a modo de ejemplo ,aqui te copio las primeras lineas
+
+,presion,temperatura,IWV,ZTD,RMS_ERROR,n
+2021-11-28 00:00:00,101017.46884012634,294.0813547344859,32.33497334513146,2.49184849090024,0.015350450516998243,3.0
+2021-11-28 01:00:00,101020.66986766209,294.03582021210815,31.97381227296249,2.48969919678082,0.011310093361410423,3.0
+2021-11-28 02:00:00,101048.78323993254,294.18484228534436,34.74455170864108,2.5074869864119718,0.002076431366257716,3.0
+2021-11-28 03:00:00,100991.30391939938,294.1548308955954,39.14668171129129,2.533581183022081,0.007188408129383258,3.0
+2021-11-28 04:00:00,100969.17507686967,294.42182877681034,37.40641637233177,2.5220850799830603,0.0029415060499344368,3.0
+
+ en ese caso se tomaron las columnas 1, 5, 6 y 7 ) y se copiaron en 1, 3,4 ,y 5 del archivo nuevo generado ,
+ en el lugar de la columna 2(del nuevo archivo) se agregó un 1, quedando asi:
+
+,ZTD,RMS_ERROR,n
+2021-11-28 01:00:00,1,2.48732,0.00068,1.0
+2021-11-28 02:00:00,1,2.50675,0.0006,1.0
+2021-11-28 03:00:00,1,2.52953,0.00064,1.0
+
+el ZTD debe quedar en la antepenúltima columna y la penúltima como desvio estandar que son los valores que lee el ejecutable SINEX_ZTD
+
+que se debe correr luego. Te sugiero hacer un script que deje 
+  fecha y hora, IWV, ZTD,RMS_ERROR,n  ( o sea columnas 1, 4,5,6,7 del archivo original)
+
+
+B)Si no hubiese corrido el programa IWV_auto_semGPS_5 , porque no puede ingresar al ftp de SIRGAS para descargar los ZTD de los Centros de procesmaiento
+
+1) se descargaron los TRP del ftp manualmente y se los copio en el directorio data/EST_trp (todos deben estar como *.gz
+2)se configuraron los archivos en data/ 
+          configuracion_manual_semGPS 
+          centros_manual
+          estaciones
+en SINEX_FILES/  se actualizaron  los archivos: station_list y AMSUR52_ALS_.....
+3) se corrio la rutina ZTD_recalculo_manual  . 
+4) en OUTPUT se generaron los archivos de salida en las carpetas por semana "2186" . En cada archivo por estacion tiene (fecha, hora, ZTD. RMS, cantidad de centros)
+5) Luego para generar los archivos por dia, en el formato SINEX se corrió el ejecutable SINEX_ZTD, 
+   previamente se configuró en data/SINEX_FILES en archivo "ztd_publicado", alli una vez que finaliza la generación de los SINEX se coloca el nombre de la semana
+  es decir que se ejecuta para la semana siguiente. En este caso la ultima semana que figuraba era la 2185
+6) este ejecutable SINEX_ZTD, tiene un error, lee la penúltima columna como ZTD (TROTOT) y la última como desvio estandar.
+   Lo que corresponde es la antepenúltima como ZTD (TROTOT) y la penúltima como desvio estandar 
+¿COMO LO RESOLVIMOS? 
+Laura Mateo les agregó una comlumna entre la fecha y el ZTD con "1," y uego volvimos a correr la rutina del ejecutable SINEX_ZTD y se generaron como correspondia
+Como prueba se compararon los SINEX finales de la semana 2187 calculados de esta forma, con los SINEX finales de la semana 2187 calculados desde
+la rutina IWV_auto_semGPS_5  y luego publicar_ZTD (ambos ejecutables en el directorio IWV5) y dieron idénticos.
+
+MEJORAS A REALIZAR EN LAS RUTINAS d esta segunda opcion
+ZTD_recalculo_manual  
+1) Que de la opción de descargar los TRP desde el ftp de SIRGAS
+2) Que lea todos los posibles formatos de TRP, zipeados o no (por ejemplo para la semana 2186 USH no estaba zipeado)
+3) que genere los mapas de ZTD, ahora sólo genera los gráficos de ZTD
+SINEX_ZTD
+1) Corregir que lea y tome las columnas correctas de ZTD y RMS
+2) que cargue al ftp de productos de ZTD de SIRGAS
+
+

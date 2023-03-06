@@ -9,14 +9,22 @@
 </head>
 
 {% block content %}
-
+    
     <div class="container-fluid mx-auto" style="max-width: 800px;">
         <h1 class="text-center">Analisis de archivos CSV</h1>
         <form action="{% url 'analisis_modificasion_csv' %}" method="post" enctype="multipart/form-data" class="my-4">
         	{% csrf_token %}
             <div class="form-group">
-                <label for="archivos">Selecciona uno o varios archivos CSV:</label>
+                <label for="archivos">Selecciona CSVs o Carpeta ZIP:</label>
                 <input type="file" name="archivos" id="archivos" class="form-control-file" multiple>
+            </div>
+
+            <div class="form-group">
+                <label for="tipo_archivo">Tipo de archivo:</label>
+                <select id="tipo_archivo" name="tipo_archivo" class="form-control">
+                    <option value="csv_files">CSV Files</option>
+                    <option value="zip_file">Carpeta ZIP</option>
+                </select>
             </div>
 
 			<div>
