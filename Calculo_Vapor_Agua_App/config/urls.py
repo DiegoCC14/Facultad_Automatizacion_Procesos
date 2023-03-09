@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("Herramientas_Vapor_Agua.urls") ),
     path('App_Envio_Correo_Masivos/', include("Envio_Correo_Masivos.urls") ),
+    path('MarkDown_Pdf/', include("MkPdf.urls") ),
 ]

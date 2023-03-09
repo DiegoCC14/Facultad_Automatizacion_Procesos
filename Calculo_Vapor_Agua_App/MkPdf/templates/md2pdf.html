@@ -1,0 +1,70 @@
+{% extends 'header_body_footer.html' %}
+
+<head>
+  <meta charset="UTF-8">
+  <title>Conversor Markdown a PDF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content=”text/html; charset="UTF-8" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+{% block content %}
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h1 class="text-center mb-4">Conversor Markdown a PDF</h1>
+        <form method="post" action="{% url 'md2pdf' %}" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="md_file">Seleccione un archivo .md:</label>
+            <input type="file" class="form-control-file" name="md_file" id="md_file">
+          </div>
+          <div class="form-group">
+            <label for="md_text">O escriba su Markdown aquí:</label>
+            <textarea class="form-control" name="md_text" id="md_text" rows="5"></textarea>
+          </div>
+          <div class="card mt-4">
+            <div class="card-body">
+              <h5 class="card-title">Opciones:</h5>
+              <div class="form-row align-items-center">
+                <div class="col-auto">
+                  <label for="page_size">Tamaño de página:</label>
+                  <select class="custom-select" id="page_size" name="page_size">
+                    <option value="A4" selected>A4</option>
+                    <option value="A5">A5</option>
+                    <option value="A3">A3</option>
+                  </select>
+                </div>
+                <div class="col-auto">
+                  <label for="font_size">Tamaño de fuente:</label>
+                  <select class="custom-select" id="font_size" name="font_size">
+                    <option value="10px" selected>10px</option>
+                    <option value="11px">11px</option>
+                    <option value="12px">12px</option>
+                    <option value="14px">14px</option>
+                    <option value="16px">16px</option>
+                  </select>
+                </div>
+                <div class="col-auto">
+                  <label for="font_family">Fuente:</label>
+                  <select class="custom-select" id="font_family" name="font_family">
+                    <option value="Helvetica" selected>Helvetica</option>
+                    <option value="Times">Times</option>
+                    <option value="Courier">Courier</option>
+                    <option value="Arial">Arial</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary btn-lg">Convertir a PDF</button>
+        </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
