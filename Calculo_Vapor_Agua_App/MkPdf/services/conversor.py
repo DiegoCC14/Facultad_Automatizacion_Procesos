@@ -69,7 +69,7 @@ def convertir_markdown_a_pdf( markdown_string , name_salida , ruta_salida , dicc
 
     # Crear un archivo PDF a partir de HTML
     with open(ruta_salida/name_salida, "wb") as f:
-        pisa.CreatePDF( html_string , dest=f)    
+        pisa.CreatePDF( html_string , dest=f)
 
 
 if __name__ == "__main__":

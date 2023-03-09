@@ -25,7 +25,7 @@ class MD2PDF_Home( View ):
 
 	def post( self , request ):
 		request_data = request.POST.dict()
-		name_pdf = ''.join(random.choice( string.ascii_lowercase ) for i in range(4))
+		name_pdf = ''.join(random.choice( string.ascii_lowercase ) for i in range(4)) + ".pdf"
 		
 		if len( request.FILES.getlist('md_file') ) > 0:
 			file_md = request.FILES.getlist('md_file')[0] #Tomamos el primer elemento
