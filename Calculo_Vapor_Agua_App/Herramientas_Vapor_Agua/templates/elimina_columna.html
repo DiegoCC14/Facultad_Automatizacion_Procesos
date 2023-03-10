@@ -1,18 +1,13 @@
 {% extends 'header_body_footer.html' %}
 {% load static %}
 
-
-{% block head %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/elimina_columna.css' %}"> 
-{% endblock %}
-
 {% block content %}
         
     <div class="container-fluid mx-auto" style="max-width: 800px;">
         
         <div style="text-align:right;">
             <div style="border: 1px solid black; padding: 5px; display: inline-block;">
-                <a href="{% url 'manual_modificasion_csv' %}" style="line-height: 30px;">Manual Herramienta</a>
+                <a href="{% url 'manual_modificasion_csv' %}" class="text-dark text-decoration-none" style="line-height: 30px;">Manual Herramienta</a>
             </div>
         </div>
         <div>
