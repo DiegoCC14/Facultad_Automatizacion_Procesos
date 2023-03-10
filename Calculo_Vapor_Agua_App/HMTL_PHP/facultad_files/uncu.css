@@ -1,0 +1,227 @@
+/* = = = NAVEGACIONES TRANSVERSALES UNCUYO= = = */
+/* Navegación principal */
+.nav-uncuyo {
+  margin-bottom: 0;
+}
+
+#navegacion-secundaria {
+  background-color: #333;
+  z-index: 1010;
+  min-height: 30px;
+  height: 30px;
+  margin-bottom: 0;
+}
+
+#navegacion-secundaria .navbar-nav > li > a {
+  color: #fff;
+  font-size: 13px;
+  padding: 0 10px;
+  line-height: 30px;
+}
+
+#navegacion-secundaria .navbar-nav > .active > a,
+#navegacion-secundaria .navbar-nav > .active > a:hover,
+#navegacion-secundaria .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: transparent;
+}
+
+#navegacion-secundaria .navbar-nav > li > a:hover,
+#navegacion-secundaria .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #555;
+}
+
+#navegacion-secundaria .navbar-brand {
+  color: red;
+}
+
+#navegacion-secundaria .navbar-toggle {
+  background-color: #eee;
+}
+
+#navegacion-secundaria .icon-bar {
+  background-color: #000;
+}
+
+/* Navegación desplegable del sitio */
+div#navegacion div.navbar-collapse {
+  font-size: 12px;
+}
+
+div#navegacion nav {
+  margin-bottom: 0;
+  background-color: transparent;
+}
+
+div#navegacion .navbar-toggle {
+  border-color: #ffffff;
+}
+
+div#navegacion .navbar-toggle:hover,
+div#navegacion .navbar-toggle:focus {
+  background-color: #dddddd;
+}
+
+div#navegacion .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+
+div#navegacion ul.dropdown-menu {
+  background-color: #ffffff;
+}
+
+#navegacion .nav > li > a {
+  font-size: 14px;
+  padding-right: 10px;
+}
+
+pre {
+  background: #f1ece4;
+  color: #5c810c;
+}
+/* ----------------------------------------------------------- */
+/* --- Columnas custom --- */
+/* ----------------------------------------------------------- */
+.col-izq5,
+.col-izq95 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.col-izq5 {
+  width: 5%;
+  float: left;
+}
+.col-izq95 {
+  width: 94%;
+  float: left;
+}
+
+
+/* ----------------------------------------------------------- */
+/* --- Columnas de cinco para la grilla --- */
+/* ----------------------------------------------------------- */
+.col-xs-cinco,
+.col-sm-cinco,
+.col-md-cinco,
+.col-lg-cinco {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.col-lg-cinco,
+.col-md-cinco,
+.col-sm-cinco,
+.col-xs-cinco {
+  width: 20%;
+  float: left;
+}
+@media (max-width: 768px) {
+  .col-lg-cinco,
+  .col-md-cinco,
+  .col-sm-cinco,
+  .col-xs-cinco {
+    width: 50%;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+  }
+}
+@media (max-width: 360px) {
+  .col-lg-cinco,
+  .col-md-cinco,
+  .col-sm-cinco,
+  .col-xs-cinco {
+    width: 100%;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
+
+/* ----------------------------------------------------------- */
+/* --- Columnas de 7 para la grilla --- */
+/* ----------------------------------------------------------- */
+@media (min-width: 768px){
+  .col-md-siete,
+  .col-sm-siete,
+  .col-lg-siete  {
+      width: 100%;
+
+    }
+  }
+  
+  
+  @media (min-width: 992px) {
+    .col-md-siete,
+    .col-sm-siete,
+    .col-lg-siete {
+      width: 14.285714285714285714285714285714%;
+
+    }
+  }
+  
+  
+  @media (min-width: 1200px) {
+      .col-md-siete,
+      .col-sm-siete,
+      .col-lg-siete {
+      width: 14.285714285714285714285714285714%;
+
+    }
+
+/* ----------------------------------------------------------- */
+/* --- Columnas de 7 para la grilla aplicado en el col (PPOL) --- */
+/* ----------------------------------------------------------- */
+@media (min-width: 768px){
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1  {
+    width: 100%;
+
+  }
+}
+
+
+@media (min-width: 992px) {
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1 {
+    width: 14.285714285714285714285714285714%;
+
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1 {
+    width: 14.285714285714285714285714285714%;
+
+  }
+/* ----------------------------------------------------------- */
+/* --- Columnas sin calles --- */
+/* ----------------------------------------------------------- */
+.row.no-gutter {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.row.no-gutter [class^="col-"],
+.row.no-gutter [class*=" col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+.row.no-gutter2 {
+  padding-left: 13px;
+  padding-right: 13px;
+}
+.row.no-gutter2 [class^="col-"],
+.row.no-gutter2 [class*=" col-"] {
+  padding-right: 1px;
+  padding-left: 1px;
+}

@@ -13,12 +13,22 @@ from django.views import View
 
 
 CURRENT_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 class Home( View ):
 
 	def get( self , request ):
 		return redirect("analisis_modificasion_csv")
+
+
+class Obtener_Manual_Uso_CSV_Modificador( View ):
+
+	def get( self , request ):
+		with open( BASE_DIR/f"Manuales_Herramientas/CSV_Modificador.pdf" , "rb") as file:
+			response = HttpResponse( file , content_type='application/pdf')
+			response['Content-Disposition'] = f'attachment; filename="Manual_CSV_Modificador.pdf"'
+		return response
 
 
 class Analisis_Modificasion_CSV( View ):
